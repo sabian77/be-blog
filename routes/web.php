@@ -29,6 +29,12 @@ Route::get('/contact', function () {
     return view('contact', ['title' => 'Contact Page']);
 });
 
+
+Route::prefix('dashboard')->group(function () {
+    Route::resource('posts', DashboardController::class);
+});
+
+
 Route::get('/about', function () {
     return view('about' , ['title' => 'About Page']);
 });

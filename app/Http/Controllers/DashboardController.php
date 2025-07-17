@@ -27,7 +27,7 @@ class DashboardController extends Controller
             });
         }
 
-        return view('dashboard', [
+        return view('dashboard.index', [
             'posts' => $posts->paginate(10)->withQueryString()
         ]);
     }
@@ -50,9 +50,10 @@ class DashboardController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Post $post)
     {
-        //
+        return view('dashboard.show', [
+            'post' => $post]);
     }
 
     /**
