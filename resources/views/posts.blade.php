@@ -45,7 +45,11 @@
         </div>
     </div>
     </form>
-        {{ $posts->links() }}
+    @if ($posts->hasPages ())
+        <div class="p-3">
+            {{ $posts->links ()}}
+        </div>
+    @endif
     
       <div class="mt-4 grid gap-8 lg:grid-cols-3 md:grid-cols-2 ">
         @forelse ( $posts as $post )
