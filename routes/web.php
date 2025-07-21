@@ -31,8 +31,12 @@ Route::get('/contact', function () {
 
 
 Route::prefix('dashboard')->group(function () {
-    Route::resource('posts', DashboardController::class);
+    Route::resource('post', DashboardController::class);
 });
+
+Route::post('/dashboard', [DashboardController::class, 'store'])
+->middleware(['auth', 'verified'])->name('dashboard');
+;
 
 
 Route::get('/about', function () {
@@ -45,6 +49,7 @@ Route::get('/about', function () {
 
 Route::get('/dashboard', [DashboardController::class, 'index'])
 ->middleware(['auth', 'verified'])->name('dashboard');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
