@@ -45,6 +45,11 @@ class DashboardController extends Controller
      */
     public function store(Request $request)
     {
+        $validated = $request->validate([
+            'title' => 'required|unique:posts|min:5|max:255',
+            'body' => 'required',
+            'category' => 'required'
+        ]);
 
         Post::create([
             'title' => $request->title,

@@ -30,7 +30,9 @@
     <div class="flex justify-end"> <!-- Tambahkan justify-end agar ke kanan -->
         <div class="relative w-full max-w-sm"> <!-- max-w-sm atau sesuai kebutuhan lebar -->
         <input type="search" id="search-dropdown"
-            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
+            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 border border-gray-300 rounded-lg
+             focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600
+              dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
             placeholder="Search Posts" required autofocus autocomplete="off" name="search" />
 
         <button type="submit"
